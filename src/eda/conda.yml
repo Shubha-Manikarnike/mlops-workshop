@@ -1,0 +1,10 @@
+name: eda
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - mlflow=1.30.0
+  - pandas=1.2.3
+  - pip=22.2.2
+  - pip:
+      - wandb==0.13.5

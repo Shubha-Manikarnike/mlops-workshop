@@ -1,0 +1,10 @@
+1. Create a new cellstrat hub account if you already do not have one.
+2. Start Workspace and Open workspace
+3. Create a new folder
+4. Git clone the project into your repo
+5. Create a new wandb account at https://wandb.ai/site
+6. Open a new terminal and execute the below commands
+
+	a. conda create --name mlops python mlflow jupyter pandas matplotlib requests -c conda-forge
+	b. pip install wand
+7.Navigate to the main project folder and execute the below command in the terminal
