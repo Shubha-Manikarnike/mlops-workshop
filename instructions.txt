@@ -1,10 +1,25 @@
-1. Create a new cellstrat hub account if you already do not have one.
-2. Start Workspace and Open workspace
+1. Create a new cellstrat hub account if you do not have one.
+2. Start Workspace and Launch Jupyter Lab
 3. Create a new folder
-4. Git clone the project into your repo
+4. Git clone the project into the new folder using the below command
+git clone https://github.com/Shubha-Manikarnike/mlops-workshop.git
+
 5. Create a new wandb account at https://wandb.ai/site
 6. Open a new terminal and execute the below commands
-
-	a. conda create --name mlops python mlflow jupyter pandas matplotlib requests -c conda-forge
-	b. pip install wand
+	a. conda create --name mlops python=3.8 mlflow jupyter pandas matplotlib requests -c conda-forge
+	b. conda activate mlops
+	c. pip install wandb
+	d. wandb login 
+		- Authenticate into wandb
 7.Navigate to the main project folder and execute the below command in the terminal
+mlflow run . -P hydra_options="modeling.random_forest.max_depth=10,50 modeling.random_forest.n_estimators=100,200 -m"
+
+8. TO test the regression model - execute the below
+mlflow run . -P steps=test_regression_model
+
+9. Deployment
+wandb artifact get shubha_manikarnike/mlops_workshop/random_forest_export:v4 --root model
+mlflow models serve -m model
+
+10: Release Pipeline - Follow instructions in 
+https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release
