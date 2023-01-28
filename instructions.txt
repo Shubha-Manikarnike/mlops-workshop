@@ -6,13 +6,13 @@ git clone https://github.com/Shubha-Manikarnike/mlops-workshop.git
 
 5. Create a new wandb account at https://wandb.ai/site
 6. Open a new terminal and execute the below commands
-	a. conda create --name mlops python=3.8 mlflow jupyter pandas matplotlib requests -c conda-forge
+	a. conda create --name mlops python mlflow jupyter pandas matplotlib requests -c conda-forge
 	b. conda activate mlops
 	c. pip install wandb
 	d. wandb login 
 		- Authenticate into wandb
 7.Navigate to the main project folder and execute the below command in the terminal
-mlflow run . -P hydra_options="modeling.random_forest.max_depth=10,50 modeling.random_forest.n_estimators=100,200 -m"
+mlflow run . -P hydra_options="modeling.random_forest.max_depth=10,50 modeling.random_forest.n_estimators=100 -m"
 
 8. TO test the regression model - execute the below
 mlflow run . -P steps=test_regression_model
